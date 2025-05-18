@@ -20,9 +20,9 @@ class Disease extends BaseModel
         'code' => 'string'
     ];
 
-    public function toViewApi()
+    public function getViewResource()
     {
-        return new ViewDisease($this);
+        return ViewDisease::class;
     }
 
     public function classificationDisease()
