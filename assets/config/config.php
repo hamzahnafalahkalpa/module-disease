@@ -6,14 +6,23 @@ use Hanafalah\ModuleDisease\{
 };
 
 return [
-    'contracts'          => [
-        'disease'        => Contracts\Disease::class,
-        'module_disease' => Contracts\ModuleDisease::class
+    'namespace' => 'Hanafalah\\ModuleDisease',
+    'app' => [
+        'contracts' => [
+            //ADD YOUR CONTRACTS HERE
+        ]
+    ],
+    'libs' => [
+        'model' => 'Models',
+        'contract' => 'Contracts',
+        'schema' => 'Schemas',
+        'database' => 'Database',
+        'data' => 'Data',
+        'resource' => 'Resources',
+        'migration' => '../assets/database/migrations'
     ],
     'database'                      => [
         'models'                    => [
-            'Disease'               => ModuleDisease\Disease::class,
-            'ClassificationDisease' => ModuleDisease\ClassificationDisease::class
         ]
     ],
 ];
