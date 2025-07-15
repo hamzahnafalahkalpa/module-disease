@@ -6,11 +6,15 @@ use Hanafalah\ModuleDisease\Resources\Disease\ViewDisease;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Hanafalah\LaravelHasProps\Concerns\HasProps;
 use Hanafalah\LaravelSupport\Models\BaseModel;
+use Illuminate\Database\Eloquent\Concerns\HasUlids;
 
 class Disease extends BaseModel
 {
-    use HasProps, SoftDeletes;
+    use HasProps, SoftDeletes, HasUlids;
 
+    public $incrementing = false;
+    protected $keyType = 'string';
+    protected $primaryKey = 'id';
     protected $list  = ['id', 'name', 'local_name', 'code', 'version', 'classification_disease_id', 'props'];
     protected $show  = [];
 
