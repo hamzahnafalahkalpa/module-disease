@@ -3,7 +3,7 @@
     "description": "module for data diasease in klinik or puskesmas",
     "type": "package",
     "require": {
-        "hanafalah/laravel-support": "1.x-dev as 1.0"
+        "hanafalah/laravel-support": "dev-main"
     },
     "autoload": {
         "psr-4": {
