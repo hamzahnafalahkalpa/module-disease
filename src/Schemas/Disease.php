@@ -15,7 +15,7 @@ class Disease extends PackageManagement implements ContractsDisease
     protected array $__guard     = ['name'];
     protected array $__add       = ['code', 'version', 'classification_disease_id', 'props'];
     protected string $__entity   = 'Disease';
-    public static $disease_model;
+    public $disease_model;
 
     protected array $__resources = [
         'view' => ViewDisease::class,
@@ -39,7 +39,7 @@ class Disease extends PackageManagement implements ContractsDisease
             'classification_disease_id' => $attributes['classification_disease_id']
         ]);
 
-        return static::$disease_model = $disease;
+        return $this->disease_model = $disease;
     }
 
     public function prepareStoreDisease(?array $attributes = null): Model
@@ -71,7 +71,7 @@ class Disease extends PackageManagement implements ContractsDisease
             'classification_disease_id' => $attributes['classification_disease_id'] ?? null
         ]);
 
-        return static::$disease_model = $disease;
+        return $this->disease_model = $disease;
     }
 
     public function updateClassificationDisease(): array
@@ -91,7 +91,7 @@ class Disease extends PackageManagement implements ContractsDisease
     public function prepareViewDiseasePaginate(int $perPage = 50, array $columns = ['*'], string $pageName = 'page', ?int $page = null, ?int $total = null): LengthAwarePaginator
     {
         $paginate_options = compact('perPage', 'columns', 'pageName', 'page', 'total');
-        return static::$disease_model = $this->disease()->paginate($perPage);
+        return $this->disease_model = $this->disease()->paginate($perPage);
     }
 
     public function viewDiseasePaginate(int $perPage = 50, array $columns = ['*'], string $pageName = 'page', ?int $page = null, ?int $total = null): array
