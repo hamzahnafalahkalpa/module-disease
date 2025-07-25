@@ -28,6 +28,7 @@ return new class extends Migration
             Schema::create($table_name, function (Blueprint $table) {
                 $table->ulid('id')->primary();
                 $table->string('name')->nullable(false);
+                $table->string('flag')->nullable(false);
                 $table->string('local_name')->nullable(false)->default('');
                 $table->string('code', 10)->nullable(false)->default('')->comment('need empty string for unique case');
                 $table->string('version')->nullable(true);

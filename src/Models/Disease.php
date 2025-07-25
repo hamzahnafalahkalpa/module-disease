@@ -15,7 +15,10 @@ class Disease extends BaseModel
     public $incrementing = false;
     protected $keyType = 'string';
     protected $primaryKey = 'id';
-    protected $list  = ['id', 'name', 'local_name', 'code', 'version', 'classification_disease_id', 'props'];
+    protected $list  = [
+        'id', 'name', 'flag','local_name', 'code', 
+        'version', 'classification_disease_id', 'props'
+    ];
     protected $show  = [];
 
     protected $casts = [
@@ -24,13 +27,14 @@ class Disease extends BaseModel
         'code' => 'string'
     ];
 
-    public function getViewResource()
-    {
-        return ViewDisease::class;
+    protected static function booted():void{
+        parent::booted();
+        static::creating(function($query){
+            $query->flag = (new static)->getMorphClass();
+        });
     }
 
-    public function classificationDisease()
-    {
-        return $this->belongsToModel('ClassificationDisease');
-    }
+    public function getViewResource(){return ViewDisease::class;}
+    public function getShowResource(){return ViewDisease::class;}
+    public function classificationDisease(){return $this->belongsToModel('ClassificationDisease');}
 }

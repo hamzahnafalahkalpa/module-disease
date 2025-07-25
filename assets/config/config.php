@@ -21,8 +21,8 @@ return [
         'resource' => 'Resources',
         'migration' => '../assets/database/migrations'
     ],
-    'database'                      => [
-        'models'                    => [
+    'database'   => [
+        'models' => [
         ]
     ],
 ];
