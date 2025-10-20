@@ -1,6 +1,6 @@
 <?php
 
-namespace Hanafalah\ModuleFunding\Contracts\Data;
+namespace Hanafalah\ModuleDisease\Contracts\Data;
 
 use Spatie\LaravelData\Contracts\BaseData;
 

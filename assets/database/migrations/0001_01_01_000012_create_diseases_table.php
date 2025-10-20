@@ -29,12 +29,9 @@ return new class extends Migration
                 $table->ulid('id')->primary();
                 $table->string('name')->nullable(false);
                 $table->string('flag')->nullable(false);
-                $table->string('local_name')->nullable(false)->default('');
-                $table->string('code', 10)->nullable(false)->default('')->comment('need empty string for unique case');
+                $table->string('local_name')->nullable(true)->default('');
+                $table->string('code', 10)->nullable(true)->default('')->comment('need empty string for unique case');
                 $table->string('version')->nullable(true);
-                $table->foreignIdFor($this->__table::class, 'classification_disease_id')
-                    ->nullable()->index()->constrained($this->__table->getTable(), $this->__table->getKeyName())
-                    ->cascadeOnUpdate()->restrictOnDelete();
                 $table->json('props')->nullable();
                 $table->timestamps();
                 $table->softDeletes();
@@ -48,6 +45,10 @@ return new class extends Migration
                 $table->foreignIdFor($this->__table::class, 'parent_id')
                     ->after('id')
                     ->nullable()->index()->constrained()
+                    ->cascadeOnUpdate()->restrictOnDelete();
+
+                $table->foreignIdFor($this->__table::class, 'classification_disease_id')
+                    ->nullable()->after('version')->index()->constrained($this->__table->getTable(), $this->__table->getKeyName())
                     ->cascadeOnUpdate()->restrictOnDelete();
             });
         }

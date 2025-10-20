@@ -5,14 +5,14 @@ namespace Hanafalah\ModuleDisease\Schemas;
 use Hanafalah\ModuleDisease\Contracts\Schemas\Disease as ContractsDisease;
 use Illuminate\Database\Eloquent\Model;
 use Hanafalah\LaravelSupport\Supports\PackageManagement;
-use Hanafalah\ModuleFunding\Contracts\Data\DiseaseData;
+use Hanafalah\ModuleDisease\Contracts\Data\DiseaseData;
 
 class Disease extends PackageManagement implements ContractsDisease
 {
     protected string $__entity   = 'Disease';
     public $disease_model;
 
-    public function prepareStoreDisease(?DiseaseData $disease_dto = null): Model{
+    public function prepareStoreDisease(DiseaseData $disease_dto): Model{
         $add = [
             'name'                      => $disease_dto->name, 
             'local_name'                => $disease_dto->local_name, 

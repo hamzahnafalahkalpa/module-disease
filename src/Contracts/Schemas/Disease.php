@@ -3,7 +3,7 @@
 namespace Hanafalah\ModuleDisease\Contracts\Schemas;
 
 use Hanafalah\LaravelSupport\Contracts\Supports\DataManagement;
-use Hanafalah\ModuleFunding\Contracts\Data\DiseaseData;
+use Hanafalah\ModuleDisease\Contracts\Data\DiseaseData;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -23,5 +23,5 @@ use Illuminate\Database\Eloquent\Model;
  * @method array storeDisease(?DiseaseData $disease_dto = null)
  */
 interface Disease extends DataManagement{
-    public function prepareStoreDisease(?DiseaseData $disease_dto = null): Model;
+    public function prepareStoreDisease(DiseaseData $disease_dto): Model;
 }

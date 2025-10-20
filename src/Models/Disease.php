@@ -16,7 +16,7 @@ class Disease extends BaseModel
     protected $keyType = 'string';
     protected $primaryKey = 'id';
     protected $list  = [
-        'id', 'name', 'flag','local_name', 'code', 
+        'id', 'parent_id', 'name', 'flag','local_name', 'code', 
         'version', 'classification_disease_id', 'props'
     ];
     protected $show  = [];

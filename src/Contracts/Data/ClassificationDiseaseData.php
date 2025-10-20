@@ -2,4 +2,4 @@
 
 namespace Hanafalah\ModuleDisease\Contracts\Data;
 
-interface ClassificationDiseaseData {}
+interface ClassificationDiseaseData extends DiseaseData {}

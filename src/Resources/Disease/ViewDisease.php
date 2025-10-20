@@ -14,17 +14,16 @@ class ViewDisease extends ApiResource
    */
   public function toArray(\Illuminate\Http\Request $request): array
   {
-    $props = $this->getOriginal()['props'];
     $arr = [
       'id'                        => $this->id,
+      'parent_id'                 => $this->parent_id,
       'name'                      => $this->name,
+      'flag'                      => $this->flag,
       'local_name'                => $this->local_name,
       'code'                      => $this->code,
+      'version'                   => $this->version,
       'classification_disease_id' => $this->classification_disease_id,
-      'props'                     => $props == [] ? null : $props
     ];
-
-
     return $arr;
   }
 }

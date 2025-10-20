@@ -28,7 +28,8 @@ use Illuminate\Database\Eloquent\Model;
  * @method array storeMultipleClassificationDisease(array $datas)
  */
 
-interface ClassificationDisease extends DataManagement
+interface ClassificationDisease extends Disease
 {
     public function prepareStoreClassificationDisease(ClassificationDiseaseData $classification_disease_dto): Model;
+    public function classificationDisease(mixed $conditionals = null): Builder;
 }
