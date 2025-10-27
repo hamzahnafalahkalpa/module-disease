@@ -10,7 +10,7 @@ use Hanafalah\ModuleDisease\Contracts\Data\ClassificationDiseaseData;
 class ClassificationDisease extends Disease implements ContractsClassificationDisease
 {
     protected string $__entity = 'ClassificationDisease';
-    public static $classification_disease_model;
+    public $classification_disease_model;
     //protected mixed $__order_by_created_at = false; //asc, desc, false
 
     protected array $__cache = [

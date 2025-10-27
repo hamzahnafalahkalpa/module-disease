@@ -10,13 +10,6 @@
             "Hanafalah\\ModuleDisease\\": "src/"
         }
     },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "Hanafalah\\ModuleDisease\\ModuleDiseaseServiceProvider"
-            ]
-        }
-    },
     "authors": [
         {
             "name": "Hamzah",
